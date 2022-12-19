@@ -51,8 +51,9 @@ CREATE TABLE `favoritos` (
 
 CREATE TABLE `ingredientes` (
   `ID_Ingredientes` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Tipo` varchar(255) NOT NULL
+  `Nombre` varchar(255) COLLATE utf8_bin NOT NULL,
+  `Tipo` varchar(255) COLLATE utf8_bin NOT NULL,
+  `Cantidad` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -183,8 +184,7 @@ INSERT INTO `recetas` (`ID_Recetas`, `Descripcion`, `Tiempo`, `Foto`, `Tipo`, `C
 CREATE TABLE `recetas_ingredientes` (
   `ID_Rec_Ingr` int(11) NOT NULL,
   `ID_Recetas` int(11) NOT NULL,
-  `ID_Ingredientes` int(11) NOT NULL,
-  `Cantidad` varchar(255) DEFAULT NULL
+  `ID_Ingredientes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
