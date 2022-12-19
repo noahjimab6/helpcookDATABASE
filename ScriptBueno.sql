@@ -51,9 +51,8 @@ CREATE TABLE `favoritos` (
 
 CREATE TABLE `ingredientes` (
   `ID_Ingredientes` int(11) NOT NULL,
-  `Nombre` varchar(255) COLLATE utf8_bin NOT NULL,
-  `Tipo` varchar(255) COLLATE utf8_bin NOT NULL,
-  `Cantidad` varchar(255) COLLATE utf8_bin NOT NULL
+  `Nombre` varchar(255) NOT NULL,
+  `Tipo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -184,7 +183,8 @@ INSERT INTO `recetas` (`ID_Recetas`, `Descripcion`, `Tiempo`, `Foto`, `Tipo`, `C
 CREATE TABLE `recetas_ingredientes` (
   `ID_Rec_Ingr` int(11) NOT NULL,
   `ID_Recetas` int(11) NOT NULL,
-  `ID_Ingredientes` int(11) NOT NULL
+  `ID_Ingredientes` int(11) NOT NULL,
+  `Cantidad` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -464,9 +464,9 @@ ALTER TABLE `pasos`
 ALTER TABLE `usuarios` 
   CHANGE `Foto` `Foto` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NULL;
   COMMIT;
-  
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
